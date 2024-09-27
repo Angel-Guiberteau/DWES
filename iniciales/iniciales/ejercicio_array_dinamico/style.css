@@ -1,0 +1,39 @@
+table {
+    border-collapse: collapse;
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.azul{
+    color: blue;
+    font-size: 1.5rem;
+}
+
+form{
+    margin: auto;
+    width: 30%;
+    border: 1px solid black;
+    margin-bottom: 2rem;
+    padding: 1%;
+    text-align: center;
+}
+
+input[type="number"]{
+    display: block;
+    width: 100%;
+    margin: 1% 1%;
+}
+
+th{
+    background-color: #38816d;
+}
+
+tr:nth-child(even){
+    background-color: lightgray;
+} 
