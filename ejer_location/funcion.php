@@ -6,6 +6,7 @@
     else
         header("Location:impar.php?num=$n&cuadrado=$cuadrado"); // Redirige a impar.php
 
+    //La funcion parImpar recibe un número y devuelve true si es par y false si es impar ademas de cargar en la variable $cuadrado el cuadrado del número
     function parImpar($n,&$cuadrado) { // &$cuadrado es una variable por referencia
         $cuadrado = $n * $n; // Calcula el cuadrado de n y lo guarda en la variable cuadrado
         if ($n % 2 == 0) 
