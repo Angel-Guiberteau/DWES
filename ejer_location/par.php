@@ -9,7 +9,7 @@
     <body id="par">
         <div class="container">
             <?php
-                echo '<h1>Numero par</h1><p id="">Numero: '.$_GET['num'].'</p><p>Cuadrado: '.$_GET['cuadrado'].'</p>';
+                echo '<h1>Numero par</h1><p>Numero: '.$_GET['num'].'</p><p>Cuadrado: '.$_GET['cuadrado'].'</p>';
             ?>    
             <a href="index.html">Volver</a>
         </div>
