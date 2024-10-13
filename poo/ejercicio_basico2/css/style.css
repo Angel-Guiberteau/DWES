@@ -1,0 +1,38 @@
+form {
+    width: 30%;
+    margin: 5% auto;
+    padding: 2%;
+    border: 1px solid #1a1a1a;
+    border-radius: 10px;
+    background-color: #299d8ea8;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+label {
+    display: block;
+    margin-bottom: 2%;
+    font-weight: normal;
+    color: #1a1a1a;
+}
+
+input[type="date"],
+input[type="submit"] {
+    width: 100%;
+    margin-bottom: 5%;
+    padding: 3%;
+    border: 1px solid #1a1a1a;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #2a83a0;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #164553;
+}
