@@ -8,12 +8,11 @@
     <body>
         <?php
             require_once 'fecha.php';
-            $objFecha = new Ejemplo();
-            $objFecha->separarCadena($_GET['fecha']); 
-            //$objFecha->bisiesto();
+            $objFecha = new Fecha();
 
-            $objFecha->mostrarFecha(); 
-            $objFecha->mostrarBisiesto();        
+            echo $objFecha->cambiarFecha($_GET['fecha']); 
+
+            echo $objFecha->mostrarBisiesto();        
         ?>
     </body>
 </html>

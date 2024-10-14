@@ -1,15 +1,16 @@
 <?php
-    class Ejemplo{
+    class Fecha{
         private array $cadenaSplit;
-        private array $meses_dias;
+        private array $meses;
         private $noBisiesto = false;
         private $ano;
         private $mes;
         private $dia;
+        private $fecha_cambiada;
 
 
         function __construct (){
-            $this->meses_dias = array(
+            $this->meses = array(
                 1 => array(
                     "0" => "Enero",
                     "1" => 31
@@ -61,37 +62,38 @@
             );
         }
 
-        function separarCadena($cadena){
+        public function cambiarFecha($cadena){
 
-                $this->cadenaSplit = explode('-', $cadena);
+            $this->cadenaSplit = explode('-', $cadena);
 
-                $this->ano = (int)$this->cadenaSplit[0]; 
-                $this->mes = (int)$this->cadenaSplit[1]; 
-                $this->dia = (int)$this->cadenaSplit[2]; 
+            $this->ano = (int)$this->cadenaSplit[0]; 
+            $this->mes = (int)$this->cadenaSplit[1]; 
+            $this->dia = (int)$this->cadenaSplit[2]; 
 
-                $this->bisiesto();
-            }
+            $this->bisiesto();
+            return $this->fecha_cambiada = $this->mostrarFecha();
+        }
 
-        function bisiesto(){
+        private function bisiesto(){
             if ($this->mes == 2) {
                 if ($this->ano % 4 == 0 && ($this->ano % 100 != 0 || $this->ano % 400 == 0)) {
-                    $this->meses_dias[2][1] = 29; // Cambia los días de febrero
+                    $this->meses[2][1] = 29; // Cambia los días de febrero
                     $this->noBisiesto=true; 
                 }
             }
         }
 
 
-        function mostrarFecha() {
-            echo  $this->cadenaSplit[2] . " de " . $this->meses_dias[$this->mes][0] . " de " . $this->cadenaSplit[0]."<br>";
+        private function mostrarFecha() {
+            return  $this->dia . " de " . $this->meses[$this->mes][0] . " de " . $this->ano ."<br>";
         }
             
-        function mostrarBisiesto(){
+        public function mostrarBisiesto(){
             if($this->noBisiesto == true){
-                echo "El año ".$this->ano." es bisiesto por lo que este mes tiene 29 días";
+                return "El año ".$this->ano." es bisiesto por lo que este mes tiene 29 días";
             }
             else
-                echo "El mes de ". $this->meses_dias[$this->mes][0]." tiene ".$this->meses_dias[$this->mes][1]." días";
+                return "El mes de ". $this->meses[$this->mes][0]." tiene ".$this->meses[$this->mes][1]." días";
         }
 
     }
