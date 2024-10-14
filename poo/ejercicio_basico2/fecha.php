@@ -9,7 +9,7 @@
         private $fecha_cambiada;
 
 
-        function __construct (){
+        function __construct (){ // Constructor de la clase en el que cargamos el array de meses
             $this->meses = array(
                 1 => array(
                     "0" => "Enero",
@@ -62,6 +62,8 @@
             );
         }
 
+        /* función que recibe una fecha en formato aaaa-mm-dd, realiza el proceso y retorna la visualizacion de la fecha como string*/
+
         public function cambiarFecha($cadena){
 
             $this->cadenaSplit = explode('-', $cadena);
@@ -74,6 +76,8 @@
             return $this->fecha_cambiada = $this->mostrarFecha();
         }
 
+        /* funcion que comprueba si el año es bisiesto y cambia los días de febrero si fuese necesario */
+
         private function bisiesto(){
             if ($this->mes == 2) {
                 if ($this->ano % 4 == 0 && ($this->ano % 100 != 0 || $this->ano % 400 == 0)) {
@@ -83,11 +87,14 @@
             }
         }
 
+        /* función que retorna la fecha en formato string con el nombre del mes */
 
         private function mostrarFecha() {
             return  $this->dia . " de " . $this->meses[$this->mes][0] . " de " . $this->ano ."<br>";
         }
-            
+        
+        /* función que retorna el número de días que tiene el mes, con texto personalizado si fuese febrero y bisiesto */	
+
         public function mostrarBisiesto(){
             if($this->noBisiesto == true){
                 return "El año ".$this->ano." es bisiesto por lo que este mes tiene 29 días";
