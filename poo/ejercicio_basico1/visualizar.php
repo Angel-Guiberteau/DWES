@@ -9,8 +9,10 @@
         <?php
             require_once 'operaciones.php';
                    
+            // Creamos un objeto de la clase Operaciones y le pasamos los dos numeros por parametro
             $objOperacion = new Operaciones($_GET['num1'], $_GET['num2']);
 
+            // Llamamos a la funcion calcular y le pasamos la operacion que queremos realizar
             echo $objOperacion->calcular( $_GET['operacion']);
 
         ?>

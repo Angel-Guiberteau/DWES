@@ -9,7 +9,11 @@
 
         function __construct($numero1, $numero2){ 
             
-            /* Como hay que cambiar siempre el numero lo cambiamos en el constructor */
+            /* 
+               Como hay que cambiar siempre el numero lo cambiamos en el constructor 
+               Guarda el numero mayor en el num1, ya que asi, siempre pondremos el
+               numero mayor primero en las operaciones
+            */
 
             if($numero1 < $numero2){
                 $this->num2 = $numero1;
