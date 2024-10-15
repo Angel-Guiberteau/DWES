@@ -12,7 +12,7 @@
 
             echo $objFecha->cambiarFecha($_GET['fecha']); 
 
-            echo $objFecha->mostrarBisiesto();        
+            echo $objFecha->num_dias;       
         ?>
     </body>
 </html>

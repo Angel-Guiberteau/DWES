@@ -7,6 +7,7 @@
         private $mes;
         private $dia;
         private $fecha_cambiada;
+        public $num_dias;
 
 
         function __construct (){ // Constructor de la clase en el que cargamos el array de meses
@@ -73,6 +74,7 @@
             $this->dia = (int)$this->cadenaSplit[2]; 
 
             $this->bisiesto();
+            $this->num_dias = $this->mostrarBisiesto();
             return $this->fecha_cambiada = $this->mostrarFecha();
         }
 
@@ -95,7 +97,7 @@
         
         /* función que retorna el número de días que tiene el mes, con texto personalizado si fuese febrero y bisiesto */	
 
-        public function mostrarBisiesto(){
+        private function mostrarBisiesto(){
             if($this->noBisiesto == true){
                 return "El año ".$this->ano." es bisiesto por lo que este mes tiene 29 días";
             }
