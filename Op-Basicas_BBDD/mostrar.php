@@ -7,11 +7,6 @@
     // Crear conexión
     $conexion = new mysqli($servername, $username, $password, $dbname);
 
-    // Verificar conexión
-    if ($conexion->connect_error) {
-        die("Conexión fallida: " . $conexion->connect_error);
-    }
-
     // Selecciona los campos id, nombre, apellido y fecha_nacimiento
     $sql = "SELECT id, nombre, apellido, fecha_nacimiento FROM Alumnos";
     $resultado = $conexion->query($sql);
