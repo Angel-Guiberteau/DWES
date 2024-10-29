@@ -23,3 +23,7 @@ VALUES ('Javi', 'Arias', '2002-09-10', 'javi.arias@example.com');
 
 INSERT INTO Alumnos (nombre, apellido, fecha_nacimiento, email) 
 VALUES ('Ángel', 'Guiberteau', '1999-12-21', 'angel.guiberteau@example.com');
+
+INSERT INTO Alumnos (nombre, apellido, fecha_nacimiento, email) 
+VALUES ('Claudia', 'Goyeneche', '2001-01-18', 'claudia.goyeneche@example.com');
+
