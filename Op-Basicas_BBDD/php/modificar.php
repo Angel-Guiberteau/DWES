@@ -85,7 +85,7 @@
 
                 //Guardamos la consulta en una variable
 
-                $sql = "SELECT * FROM alumnos WHERE id=".$_GET['id'];
+                $sql = "SELECT * FROM Alumnos WHERE id=".$_GET['id'].";";
                 $resultado = $conexion->query($sql); //Realizamos la consulta y guardamos su resultado
 
                 if ($resultado->num_rows > 0) {

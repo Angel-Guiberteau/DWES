@@ -2,7 +2,7 @@
 
     require_once 'conexion.php';
 
-    $sql = "SELECT * FROM alumnos ORDER BY nombre ASC;";
+    $sql = "SELECT * FROM Alumnos ORDER BY nombre ASC;";
     //echo $sql;
     $resultado = $conexion->query($sql);
     

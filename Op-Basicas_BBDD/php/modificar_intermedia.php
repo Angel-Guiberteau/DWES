@@ -49,44 +49,54 @@
             $fecha_nacimiento = $_POST['fecha_nacimiento'];
             $email = $_POST['email'];
 
-            if(!empty($_POST['nombre'])){
-                $sql = "UPDATE alumnos SET nombre = '$nombre' WHERE id = '$id'";
-                $resultado = $conexion->query($sql);
-            }
+            // if(!empty($_POST['nombre'])){
+            //     $sql = "UPDATE Alumnos SET nombre = '$nombre' WHERE id = '$id'";
+            //     $resultado = $conexion->query($sql);
+            // }
 
-            if(!empty($_POST['apellido'])){
-                $sql = "UPDATE alumnos SET apellido = '$apellido' WHERE id = '$id'";
-                $resultado = $conexion->query($sql);
-            }
+            // if(!empty($_POST['apellido'])){
+            //     $sql = "UPDATE Alumnos SET apellido = '$apellido' WHERE id = '$id'";
+            //     $resultado = $conexion->query($sql);
+            // }
 
-            if(!empty($_POST['fecha_nacimiento'])){
-                $sql = "UPDATE alumnos SET fecha_nacimiento = '$fecha_nacimiento' WHERE id = '$id'";
-                $resultado = $conexion->query($sql);
-            }
+            // if(!empty($_POST['fecha_nacimiento'])){
+            //     $sql = "UPDATE Alumnos SET fecha_nacimiento = '$fecha_nacimiento' WHERE id = '$id'";
+            //     $resultado = $conexion->query($sql);
+            // }
 
-            if(!empty($_POST['email'])){
-                $sql = "UPDATE alumnos SET email = '$email' WHERE id = '$id'";
-                $resultado = $conexion->query($sql);
-            }
+            // if(!empty($_POST['email'])){
+            //     $sql = "UPDATE Alumnos SET email = '$email' WHERE id = '$id'";
+            //     $resultado = $conexion->query($sql);
+            // }
 
-            // $sql = "UPDATE alumnos SET nombre = '$nombre', apellido = '$apellido', fecha_nacimiento = '$fecha_nacimiento', email = '$email' WHERE id = '$id'";
-            
-            $resultado = $conexion->query($sql);
-            $fila_afectada = $conexion->affected_rows;
+            if(!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['fecha_nacimiento']) && !empty($_POST['email']))
+            {
+
+                $sql = "UPDATE Alumnos SET nombre = '$nombre', apellido = '$apellido', fecha_nacimiento = '$fecha_nacimiento', email = '$email' WHERE id = '$id';";
+
+                $resultado = $conexion->query($sql);
+                $fila_afectada = $conexion->affected_rows;
+
+                echo '<div class="container">';
+
+                    if($fila_afectada > 0) {
+                        echo '<div class="message success"><p>Se ha modificado correctamente</p></div>';
+                    }
+                    
+                echo '</div>';
+
+                header("Refresh: 2; url=mostrartodo.php");
+                $conexion->close();
+
+            }
+            else
+            {
+                echo '<div class="message error"><p>No se ha modificado correctamente</p></div>';
+
+                header("Refresh: 2; url=mostrartodo.php");
+            }
 
         ?>
-        <div class="container">
-            <?php
-                if($fila_afectada > 0) {
-                    echo '<div class="message success"><p>Se ha modificado correctamente</p></div>';
-                } else {
-                    echo '<div class="message error"><p>No se ha modificado correctamente</p></div>';
-                }
-
-                header("refresh:2;url=mostrartodo.php");
-                $conexion->close();
-            ?>
-        </div>
     </body>
 </html>
 

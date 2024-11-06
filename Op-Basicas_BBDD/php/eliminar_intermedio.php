@@ -45,7 +45,7 @@
             
             $id = $_GET['id'];
 
-            $sql = "DELETE FROM alumnos WHERE id = '$id'";
+            $sql = "DELETE FROM Alumnos WHERE id = '$id';";
             $resultado = $conexion->query($sql);
             $fila_afectada = $conexion->affected_rows;
 
@@ -58,7 +58,7 @@
                     echo '<div class="message error"><p>No se ha eliminado correctamente</p></div>';
                 }
 
-                header("refresh:2;url=mostrartodo.php");
+                header("Refresh: 2; url=mostrartodo.php");
                 $conexion->close();
             ?>
         </div>

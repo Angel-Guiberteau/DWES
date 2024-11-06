@@ -89,7 +89,7 @@
                 require_once 'conexion.php';
 
                 // Guardamos la consulta en una variable
-                $sql = "SELECT id, nombre, apellido, fecha_nacimiento, email FROM Alumnos ORDER BY id";
+                $sql = "SELECT id, nombre, apellido, fecha_nacimiento, email FROM Alumnos ORDER BY id;";
                 $resultado = $conexion->query($sql); //Realizamos la consulta y guardamos su resultado
 
                 if ($resultado->num_rows > 0) {

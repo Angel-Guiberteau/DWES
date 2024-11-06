@@ -1,13 +1,13 @@
 <?php
-    define("SERVIDOR",'localhost');
-    define("USUARIO",'root');
-    define("PASSWORD",'');
-    define("BBDD",'Escuela'); 
+    // define("SERVIDOR",'localhost');
+    // define("USUARIO",'root');
+    // define("PASSWORD",'');
+    // define("BBDD",'Escuela'); 
 ?>
 
 <?php
-    // define("SERVIDOR",'12.1daw.esvirgua.com');
-    // define("USUARIO",'user1daw_12');
-    // define("PASSWORD",')l40^U%Lf}q8');
-    // define("BBDD",'user1daw_BD1-12');
+    define("SERVIDOR",'08.2daw.esvirgua.com');
+    define("USUARIO",'user2daw_08');
+    define("PASSWORD",'N{j^HaNExcUm');
+    define("BBDD",'user2daw_BD1-08');
 ?>
